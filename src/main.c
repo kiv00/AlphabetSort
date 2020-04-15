@@ -37,6 +37,22 @@ int main(){
 	char slova[kolvo][max];
 	rewind(op);
 	pred='.';
+	while((sim=getc(op))!=EOF){
+		if((sim>64&&sim<91)||(sim>96&&sim<123)){
+				if(!((pred>64&&pred<91)||(pred>96&&pred<123))){
+					i++;
+					j=1;
+					if(sim>64&&sim<91) sim+=32;
+					slova[i][0]=sim;
+				}else{
+					if(sim>64&&sim<91) sim+=32;
+					slova[i][j]=sim;
+					j++;
+					slova[i][j]=0;
+				}
+			}
+			pred=sim;
+		}
 	system("PAUSE");
 	return EXIT_SUCCESS;
 }	
