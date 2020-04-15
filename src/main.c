@@ -15,8 +15,8 @@ int main(){
 	char name1[1000],name2[1000],zapros[1002],sim,pred='.';
 	printf("enter the file name: ");
 	scanf("%s", zapros);
-	strcpy(name1,"..\texts\\");
-	strcpy(name2,"..\Sort\\");
+	strcpy(name1,"../texts/");
+	strcpy(name2,"../Sort/");
 	strcat(name1,zapros);
 	strcat(name2,zapros);
 	op=fopen(name1,"r");
