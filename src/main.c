@@ -34,6 +34,9 @@ int main(){
 			pred=sim;
 	}
 	max++;
+	char slova[kolvo][max];
+	rewind(op);
+	pred='.';
 	system("PAUSE");
 	return EXIT_SUCCESS;
 }	
