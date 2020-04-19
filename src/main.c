@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -6,8 +5,7 @@
 #include <string.h>
 #include <conio.h>
 #include <locale.h>
-
-
+#include "func.h"
 
 int main(){
 	setlocale(LC_ALL,"Russian");
@@ -54,6 +52,22 @@ int main(){
 			}
 			pred=sim;
 		}
+		
+	char **slovadin;
+	slovadin = (char**)malloc(kolvo*sizeof(char*));
+	for (i=0; i<kolvo; i++) {
+	slovadin[i] = (char*)malloc(max*sizeof(char));}
+		
+	for(int i=0; i<kolvo;i++)
+	strcpy(slovadin[i], slova[i]);
+	
+	Sort(slovadin, kolvo, max);
+		
+	kolvo = Unique(slovadin, kolvo);
+	
+	fclose(op);
+	fclose(sort);
+	printf("Complete!\n");
 	system("PAUSE");
 	return EXIT_SUCCESS;
 }	
