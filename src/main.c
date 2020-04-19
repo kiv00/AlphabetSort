@@ -54,6 +54,17 @@ int main(){
 			}
 			pred=sim;
 		}
+		
+	char **slovadin;
+	slovadin = (char**)malloc(kolvo*sizeof(char*));
+	for (i=0; i<kolvo; i++) {
+	slovadin[i] = (char*)malloc(max*sizeof(char));}
+		
+	for(int i=0; i<kolvo;i++)
+	strcpy(slovadin[i], slova[i]);
+	
+	fclose(op);
+	fclose(sort);	
 	system("PAUSE");
 	return EXIT_SUCCESS;
 }	
