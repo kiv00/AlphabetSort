@@ -1,0 +1,3 @@
+bin/main.exe
+build/src/*o
+build/test/*o
