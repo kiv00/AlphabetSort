@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -6,8 +5,7 @@
 #include <string.h>
 #include <conio.h>
 #include <locale.h>
-
-
+#include "func.h"
 
 int main(){
 	setlocale(LC_ALL,"Russian");
