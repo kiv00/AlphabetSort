@@ -61,8 +61,13 @@ int main(){
 	for(int i=0; i<kolvo;i++)
 	strcpy(slovadin[i], slova[i]);
 	
+	Sort(slovadin, kolvo, max);
+		
+	kolvo = Unique(slovadin, kolvo);
+	
 	fclose(op);
-	fclose(sort);	
+	fclose(sort);
+	printf("Complete!\n");
 	system("PAUSE");
 	return EXIT_SUCCESS;
 }	
