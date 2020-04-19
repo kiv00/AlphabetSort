@@ -65,6 +65,10 @@ int main(){
 		
 	kolvo = Unique(slovadin, kolvo);
 	
+	for(int i=0; i<kolvo;i++){
+			fputs(slovadin[i],sort);
+			putc('\n',sort);
+		}
 	fclose(op);
 	fclose(sort);
 	printf("Complete!\n");
