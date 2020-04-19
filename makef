@@ -1,0 +1,13 @@
+all: bin/main.exe
+
+bin/main.exe: build/src/main.o build/src/func.o
+	gcc -Wall -Werror -o bin/main.exe build/src/main.o build/src/func.o 
+
+build/src/main.o: src/main.c
+	gcc -c -o build/src/main.o src/main.c 
+
+build/src/func.o: src/func.c
+	gcc -c -o  build/src/func.o src/func.c 
+
+clean:
+	rm -rf bin/*exe build/src/*o
