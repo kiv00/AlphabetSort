@@ -42,7 +42,7 @@ int main(){
 				if(!((pred>64&&pred<91)||(pred>96&&pred<123))){
 					i++;
 					j=1;
-					if(simbol>64&&simbol<91) sim+=32;
+					if(simbol>64&&simbol<91) simbol+=32;
 					slova[i][0]=simbol;
 				}else{
 					if(simbol>64&&simbol<91) simbol+=32;
