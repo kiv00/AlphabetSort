@@ -54,20 +54,20 @@ int main(){
 			pred=sim;
 		}
 		
-	char **slovadin;
-	slovadin = (char**)malloc(count*sizeof(char*));
+	char **slovaDinam;
+	slovaDinam = (char**)malloc(count*sizeof(char*));
 	for (i=0; i<kolvo; i++) {
-	slovadin[i] = (char*)malloc(max*sizeof(char));}
+	slovaDinam[i] = (char*)malloc(max*sizeof(char));}
 		
 	for(int i=0; i<count;i++)
-	strcpy(slovadin[i], slova[i]);
+	strcpy(slovaDinam[i], slova[i]);
 	
-	Sort(slovadin, count, max);
+	Sort(slovaDinam, count, max);
 		
-	kolvo = Unique(slovadin, count);
+	count = Unique(slovaDinam, count);
 	
 	for(int i=0; i<count;i++){
-			fputs(slovadin[i],sort);
+			fputs(slovaDinam[i],sort);
 			putc('\n',sort);
 		}
 	fclose(op);
