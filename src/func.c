@@ -64,3 +64,28 @@ void countWord(long long * max, long long * count, char *filename){
 	*count=counts;
 	fclose(op);
 }
+
+void wordsArray(char **slovaDinam, char *filename, long long count, long long max){
+	char slova[count][max], simbol,pred;
+	int i=-1,j=0;
+	FILE *op=fopen(filename,"r");
+	rewind(op);
+	pred='.';
+	while((simbol=getc(op))!=EOF){
+		if((simbol>64&&simbol<91)||(simbol>96&&simbol<123)){
+				if(!((pred>64&&pred<91)||(pred>96&&pred<123))){
+					i++;
+					j=1;
+					if(simbol>64&&simbol<91) simbol+=32;
+					slovaDinam[i][0]=simbol;
+				}else{
+					if(simbol>64&&simbol<91) simbol+=32;
+					slovaDinam[i][j]=simbol;
+					j++;
+					slovaDinam[i][j]=0;
+				}
+			}
+			pred=simbol;
+		}
+	fclose(op);
+}
