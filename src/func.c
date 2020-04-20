@@ -42,3 +42,25 @@ char temp[M];
 				}
 			}
 }
+
+void countWord(long long * max, long long * count, char *filename){
+	char simbol, pred='.';
+	long long dlin=1;
+	long long counts=0;
+	FILE *op = fopen(filename,"r");
+	while((simbol=getc(op))!=EOF){
+			if((simbol>64&&simbol<91)||(simbol>96&&simbol<123)||(simbol>191&&simbol<256)){
+				if((pred>64&&pred<91)||(pred>96&&pred<123)||(pred>191&&pred<256)){
+					dlin++;
+				}else {
+					if(dlin>*max) *max=dlin;
+					dlin=1;
+					counts++;
+				}
+			}
+			pred=simbol;
+	}
+	*max++;
+	*count=counts;
+	fclose(op);
+}
