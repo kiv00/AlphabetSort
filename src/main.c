@@ -12,7 +12,7 @@ int main(){
 	int i=-1,j=0;
 	long long dlin=1,kolvo=0,max=0;
 	FILE *op, *sort;
-	char name1[1000],name2[1000],zapros[1002],sim,pred='.';
+	char name1[1000],name2[1000],zapros[1002],simbol,pred='.';
 	printf("enter the file name: ");
 	scanf("%s", zapros);
 	strcpy(name1,"../texts/");
@@ -21,8 +21,8 @@ int main(){
 	strcat(name2,zapros);
 	op=fopen(name1,"r");
 	sort=fopen(name2,"w");
-	while((sim=getc(op))!=EOF){
-			if((sim>64&&sim<91)||(sim>96&&sim<123)||(sim>191&&sim<256)){
+	while((simbol=getc(op))!=EOF){
+			if((simbol>64&&simbol<91)||(simbol>96&&simbol<123)||(simbol>191&&simbol<256)){
 				if((pred>64&&pred<91)||(pred>96&&pred<123)||(pred>191&&pred<256)){
 					dlin++;
 				}else {
@@ -37,16 +37,16 @@ int main(){
 	char slova[kolvo][max];
 	rewind(op);
 	pred='.';
-	while((sim=getc(op))!=EOF){
-		if((sim>64&&sim<91)||(sim>96&&sim<123)){
+	while((simbol=getc(op))!=EOF){
+		if((simbol>64&&simbol<91)||(simbol>96&&simbol<123)){
 				if(!((pred>64&&pred<91)||(pred>96&&pred<123))){
 					i++;
 					j=1;
-					if(sim>64&&sim<91) sim+=32;
-					slova[i][0]=sim;
+					if(simbol>64&&simbol<91) sim+=32;
+					slova[i][0]=simbol;
 				}else{
-					if(sim>64&&sim<91) sim+=32;
-					slova[i][j]=sim;
+					if(simbol>64&&simbol<91) simbol+=32;
+					slova[i][j]=simbol;
 					j++;
 					slova[i][j]=0;
 				}
