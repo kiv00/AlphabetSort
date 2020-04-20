@@ -10,7 +10,7 @@
 int main(){
 	setlocale(LC_ALL,"Russian");
 	int i=-1,j=0;
-	long long dlin=1,kolvo=0,max=0;
+	long long dlin=1,count=0,max=0;
 	FILE *op, *sort;
 	char name1[1000],name2[1000],zapros[1002],simbol,pred='.';
 	printf("enter the file name: ");
@@ -28,13 +28,13 @@ int main(){
 				}else {
 					if(dlin>max) max=dlin;
 					dlin=1;
-					kolvo++;
+					count++;
 				}
 			}
 			pred=sim;
 	}
 	max++;
-	char slova[kolvo][max];
+	char slova[count][max];
 	rewind(op);
 	pred='.';
 	while((simbol=getc(op))!=EOF){
@@ -55,18 +55,18 @@ int main(){
 		}
 		
 	char **slovadin;
-	slovadin = (char**)malloc(kolvo*sizeof(char*));
+	slovadin = (char**)malloc(count*sizeof(char*));
 	for (i=0; i<kolvo; i++) {
 	slovadin[i] = (char*)malloc(max*sizeof(char));}
 		
-	for(int i=0; i<kolvo;i++)
+	for(int i=0; i<count;i++)
 	strcpy(slovadin[i], slova[i]);
 	
-	Sort(slovadin, kolvo, max);
+	Sort(slovadin, count, max);
 		
-	kolvo = Unique(slovadin, kolvo);
+	kolvo = Unique(slovadin, count);
 	
-	for(int i=0; i<kolvo;i++){
+	for(int i=0; i<count;i++){
 			fputs(slovadin[i],sort);
 			putc('\n',sort);
 		}
