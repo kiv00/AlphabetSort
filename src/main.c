@@ -9,7 +9,8 @@
 
 int main(){
 	setlocale(LC_ALL,"Russian");
-	int dlin=1,kolvo=0,max=0,i=-1,j=0;
+	int i=-1,j=0;
+	long long dlin=1,kolvo=0,max=0;
 	FILE *op, *sort;
 	char name1[1000],name2[1000],zapros[1002],sim,pred='.';
 	printf("enter the file name: ");
