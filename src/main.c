@@ -24,6 +24,12 @@ int main(){
 	strcat(name1,zapros);
 	strcat(name2,zapros);
 	sort=fopen(name2,"w");
+	op=fopen(name1,"r");
+	if(op==NULL) {
+	printf("file error");
+	system("PAUSE");
+	return 0;
+	}
 	countWord(&max,&count,name1);
 	char **slovaDinam;
 	slovaDinam = (char**)malloc(count*sizeof(char*));
