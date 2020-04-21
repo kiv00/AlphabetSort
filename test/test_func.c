@@ -6,7 +6,7 @@
 
 #include "../thirdparty/ctest.h"
 
-CTEST(arithmetic_suite, Sort)
+/*CTEST(arithmetic_suite, Sort)
 {
 	int i;
 	char **arr;
@@ -32,5 +32,13 @@ CTEST(arithmetic_suite, Sort)
     strcpy(arrTeor[2],"cat");
     strcpy(arrTeor[3],"dog");
     strcpy(arrTeor[4],"sad");
-    ASSERT_DATA(arrTeor, 5, arr, 5);
+    ASSERT_STR(arrTeor, arr);
+}*/
+
+CTEST(arithmetic_suite, countWord)
+{
+    long long max = 0, count = 0;
+    countWord(&max, &count, "test.txt");
+    const long long countTeor = 4;
+    ASSERT_EQUAL(countTeor, count);
 }

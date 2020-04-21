@@ -1,8 +1,8 @@
 all: bin/main.exe
 test: bin/test.exe
 
-bin/test.exe: build/test/main.o build/test/func.o
-	gcc -Wall -I src -Werror -o bin/test.exe build/test/main.o build/test/func.o
+bin/test.exe: build/test/main.o build/test/test_func.o build/src/func.o
+	gcc -Wall -I src -Werror -o bin/test.exe build/test/main.o build/test/test_func.o build/src/func.o 
 
 bin/main.exe: build/src/main.o build/src/func.o
 	gcc -Wall -Werror -o bin/main.exe build/src/main.o build/src/func.o 
@@ -11,8 +11,9 @@ bin/main.exe: build/src/main.o build/src/func.o
 build/test/main.o: test/main.c
 	gcc -Wall -I src -o build/test/main.o test/main.c
 
-build/test/func.o: test/test_func.c
-	gcc -Wall -I src -o  build/test/func.o test/test_func.c
+build/test/test_func.o: test/test_func.c
+	gcc -Wall -I src -o  build/test/test_func.o test/test_func.c
+
 
 build/src/main.o: src/main.c
 	gcc -c -o build/src/main.o src/main.c 
@@ -21,4 +22,4 @@ build/src/func.o: src/func.c
 	gcc -c -o  build/src/func.o src/func.c 
 
 clean:
-	rm -rf bin/*exe build/src/*o
+	rm -rf bin/*exe build/src/*o build/test/*o
