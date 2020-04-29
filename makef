@@ -21,5 +21,6 @@ build/src/main.o: src/main.c
 build/src/func.o: src/func.c
 	gcc -c -o  build/src/func.o src/func.c 
 
+
 clean:
 	rm -rf bin/*exe build/src/*o build/test/*o
