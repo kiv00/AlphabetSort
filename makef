@@ -19,7 +19,7 @@ build/src/main.o: src/main.c
 	gcc -c -o build/src/main.o src/main.c 
 
 build/src/func.o: src/func.c
-	gcc -c -o  build/src/func.o src/func.c 
+	gcc -c -o build/src/func.o src/func.c 
 
 
 
