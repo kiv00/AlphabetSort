@@ -6,6 +6,8 @@
 
 #include "../thirdparty/ctest.h"
 
+
+
 CTEST(arithmetic_suite, Sort)
 {
 	int i;
