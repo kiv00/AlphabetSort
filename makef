@@ -9,7 +9,7 @@ bin/main.exe: build/src/main.o build/src/func.o
 
 
 build/test/main.o: test/main.c
-	gcc -o build/test/main.o test/main.c
+	gcc -c -o build/test/main.o test/main.c
 
 build/test/test_func.o: test/test_func.c
 	gcc -c -o build/test/test_func.o test/test_func.c
