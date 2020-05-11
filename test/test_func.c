@@ -1,4 +1,4 @@
-#include "../src/func.h"
+си #include "../src/func.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,7 +6,7 @@
 
 #include "../thirdparty/ctest.h"
 
-CTEST(arithmetic_suite, Sort)
+        CTEST(arithmetic_suite, Sort)
 {
     int i;
     char** arr;
@@ -44,7 +44,7 @@ CTEST(arithmetic_suite, Sort)
 CTEST(arithmetic_suite, countWord)
 {
     long long max = 0, count = 0;
-    countWord(&max, &count, "../texts/test.txt");
+    countWord(&max, &count, "../test/test.txt");
     const long long countTeor = 4;
     const long long maxTeor = 5;
     ASSERT_EQUAL(maxTeor, max);
@@ -76,4 +76,29 @@ CTEST(arithmetic_suite, Unique)
     ASSERT_EQUAL(sTeor, s);
     ASSERT_STR(arrTeor[0], arr[0]);
     ASSERT_STR(arrTeor[1], arr[1]);
+}
+
+CTEST(arithmetic_suite, wordsArray)
+{
+    int i;
+    long long count = 4, max = 5;
+    char** slovaDinam;
+    slovaDinam = (char**)malloc(count * sizeof(char*));
+    for (i = 0; i < 4; i++) {
+        slovaDinam[i] = (char*)malloc(max * sizeof(char));
+    }
+    char** arr;
+    arr = (char**)malloc(count * sizeof(char*));
+    for (i = 0; i < 4; i++) {
+        arr[i] = (char*)malloc(max * sizeof(char));
+    }
+    strcpy(arr[0], "words");
+    strcpy(arr[1], "cat");
+    strcpy(arr[2], "man");
+    strcpy(arr[3], "dog");
+    wordsArray(slovaDinam, "../test/test.txt", count, max);
+    ASSERT_STR(arr[0], slovaDinam[0]);
+    ASSERT_STR(arr[1], slovaDinam[1]);
+    ASSERT_STR(arr[2], slovaDinam[2]);
+    ASSERT_STR(arr[3], slovaDinam[3]);
 }
