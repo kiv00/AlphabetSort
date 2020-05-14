@@ -45,6 +45,7 @@ void countWord(long long* max, long long* count, char* filename)
     long long dlin = 1;
     long long counts = 0;
     FILE* op = fopen(filename, "r");
+    simbol = getc(op);
     while ((simbol = getc(op)) != EOF) {
         if ((simbol > 64 && simbol < 91) || (simbol > 96 && simbol < 123)
             || (simbol > 191 && simbol < 256)) {
