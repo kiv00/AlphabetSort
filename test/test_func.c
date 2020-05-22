@@ -46,8 +46,10 @@
 
 CTEST(arithmetic_suite, countWord)
 {
+	char name[1000];
+	strcpy(name, "../test/test.txt");
     long long max = 0, count = 0;
-    countWord(&max, &count, "../test/test.txt");
+    countWord(&max, &count, name);
     const long long countTeor = 4;
     const long long maxTeor = 5;
     ASSERT_EQUAL(maxTeor, max);
@@ -84,6 +86,8 @@ CTEST(arithmetic_suite, Unique)
 CTEST(arithmetic_suite, wordsArray)
 {
     int i;
+    char name[1000];
+	strcpy(name, "../test/test.txt");
     long long count = 4, max = 5;
     char** slovaDinam;
     slovaDinam = (char**)malloc(count * sizeof(char*));
@@ -99,7 +103,7 @@ CTEST(arithmetic_suite, wordsArray)
     strcpy(arr[1], "cat");
     strcpy(arr[2], "man");
     strcpy(arr[3], "dog");
-    wordsArray(slovaDinam, "../test/test.txt", count, max);
+    wordsArray(slovaDinam, name, count, max);
     ASSERT_STR(arr[0], slovaDinam[0]);
     ASSERT_STR(arr[1], slovaDinam[1]);
     ASSERT_STR(arr[2], slovaDinam[2]);
