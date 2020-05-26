@@ -9,7 +9,7 @@
 
 #include "../thirdparty/ctest.h"
 
-        CTEST(arithmetic_suite, Sort)
+CTEST(arithmetic_suite, Sort)
 {
     int i;
     char** arr;
@@ -46,8 +46,8 @@
 
 CTEST(arithmetic_suite, countWord)
 {
-	char name[1000];
-	strcpy(name, "../test/test.txt");
+    char name[1000];
+    strcpy(name, "../test/test.txt");
     long long max = 0, count = 0;
     countWord(&max, &count, name);
     const long long countTeor = 4;
@@ -87,7 +87,7 @@ CTEST(arithmetic_suite, wordsArray)
 {
     int i;
     char name[1000];
-	strcpy(name, "../test/test.txt");
+    strcpy(name, "../test/test.txt");
     long long count = 4, max = 5;
     char** slovaDinam;
     slovaDinam = (char**)malloc(count * sizeof(char*));
